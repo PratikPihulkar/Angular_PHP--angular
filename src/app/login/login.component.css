@@ -1,0 +1,106 @@
+.mdiv{
+    position: relative;
+    min-height: 95vh;
+    width: 100%;
+    margin: 0px;
+   background-color: #ffffff;   
+   padding-top: 5rem ;
+   background: url("https://img.freepik.com/free-vector/worldwide-connection-gray-background-illustration-vector_53876-76821.jpg?t=st=1731496657~exp=1731500257~hmac=c309f546d38c194e1c2cc58e43a6b89131408a3a9316c776f25f2fb80fde1b32&w=826");
+   /* background: url(""); */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+
+}
+.boxx {
+   position: relative;
+   width: 40rem;
+   margin-left: 5rem;
+   padding: 2rem;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
+   backdrop-filter: blur(10px);
+   
+   font-weight: 500;
+   color: rgb(77, 65, 65);
+
+   background: rgb(162, 162, 163); /* Transparent red */
+   background: linear-gradient(circle, rgba(30, 39, 29, 0.8) 10%, transparent 80%); /* Smoke-like effect */
+}
+
+@media screen and (max-width:700px) {
+   .boxx{
+      padding:1rem;
+      padding-top: 2rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      width: auto;
+   }
+   h3{
+      font-size: 25px ;
+   }
+
+}
+
+
+
+@keyframes color-animation {
+    0% {
+       background: #ad1457;
+    }
+    50% {
+       background: #6a1b9a;
+    } 
+    100% {
+       background: #bbdefb
+    } 
+ }
+ #Wave{
+   position: absolute;
+   bottom: 0;
+ }
+
+
+ /* ////////////// */
+
+ .div2{
+   position: relative;
+   height: 100vh;
+   width: 100%;
+   background: url('https://d.novoresume.com/images/landing_page/odyssey/ebook-cover.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+
+  body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bubble {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-200px) translateX(100px);
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+    }

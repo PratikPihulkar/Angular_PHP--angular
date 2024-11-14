@@ -1,0 +1,19 @@
+.mdiv
+{
+    height: 95vh;
+    width: 100vw;
+    background:url('https://img.freepik.com/free-vector/abstract-low-poly-background_1048-8087.jpg?t=st=1731499853~exp=1731503453~hmac=55326cce26f0a9ab2ae1807a8765cec583f33cfc446276917c1bd9db00772c61&w=826');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.card{
+    min-height: 20rem;
+    width:40rem;
+    margin-top: 10rem;
+
+}
+.cg{
+    color: rgb(20, 205, 42);
+}

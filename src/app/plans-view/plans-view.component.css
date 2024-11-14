@@ -1,0 +1,60 @@
+.mdiv {
+    padding: 2rem;
+    /* background: url('https://www.shutterstock.com/shutterstock/photos/2308908501/display_1500/stock-photo-bamboo-leaves-pattern-on-the-branches-in-tropical-forest-with-grayscale-color-or-black-and-white-2308908501.jpg'); */
+    background: url('https://img.freepik.com/free-vector/black-white-leaf-background_1308-26139.jpg?t=st=1731488205~exp=1731491805~hmac=80fdc039c620940f39d1d460ac7e24dae7a340d2ced3622a38d8195e03f2776a&w=1380');
+    min-height: 95vh;
+    background-size: cover;
+}
+
+.ccc {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    z-index: -1;
+    color: rgb(12, 12, 12);
+}
+
+.bd-highlight {
+    height: 35rem;
+    margin-top: 2rem;
+    background-color: #e5e4e4;
+    width: 100%;
+    max-width: 22rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.imdDiv {
+    height: 10rem;
+    margin: 10px;
+    background-color: rgb(119, 119, 120);
+    background: url('https://images.pexels.com/photos/1373881/pexels-photo-1373881.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.h22 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.imdDiv 
+   {
+        background: rgb(173,173,173);
+        background: linear-gradient(0deg, rgba(173,173,173,1) 0%, rgba(142,140,140,1) 21%, rgba(88,86,86,1) 46%, rgba(110,110,110,1) 77%, rgba(173,173,173,1) 100%);
+        background-size: 200% 200%;
+        animation: gradientShift 10s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }

@@ -1,0 +1,43 @@
+.mdiv {
+   overflow-y: scroll;
+   
+    min-height: 95vh;
+    background: url('https://img.freepik.com/free-vector/white-gray-hexagon-pattern-background_53876-118453.jpg?t=st=1731491972~exp=1731495572~hmac=9cb7317acf76dbc698d08e428ab6eef7f565723243147d798b317040b9d3e943&w=1380');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+.mdiv::-webkit-scrollbar {
+    display: none;
+}
+
+
+.boxContainer {
+    margin: 2rem;
+    min-width: 20rem;
+}
+
+.bigx {
+    min-height: 40rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    min-width: 20rem;
+    margin-right: 2rem;
+    background-color: rgb(255, 255, 255);
+
+    border: 1px solid rgb(211, 207, 207);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column !important;
+    }
+    
+    .boxContainer, .bigx {
+        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
