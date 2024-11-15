@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,33 @@ import { Observable } from 'rxjs';
 export class DataStoreServiceService {
 
   constructor(private http:HttpClient, private route:Router) {}
+
+
+  private baseUrl = environment.apiUrl;
+
+
+//Register User
+  createUser(user:any):Observable<any>{
+    return this.http.post('http://localhost:8000/register', user)
+  }
+
+
+//Login User
+  userLogin(user:any):Observable<any>{
+    return this.http.post('http://localhost:8000/login', user)
+  }
+
+
+  getSingleUser(user:any):Observable<any>{
+    return this.http.post('http://localhost:8000/get_user_by_email', user);
+  }
+
+
+ 
+
+
+
+
 
 
 
@@ -25,41 +53,7 @@ globleId:any=null
     }
   }
 
-//USER
-    getUserList():Observable<any>{
-     return this.http.get('http://localhost:3000/user');
-    }
 
-    getSingleUser(id:any):Observable<any>{
-      return this.http.get('http://localhost:3000/user/'+id);
-    }
 
-    createUser(user:any):Observable<any>{
-      return this.http.post<any>('http://localhost:3000/user', user)
-    }
-
-    updateUser(id:any, user:any):Observable<any>{
-      return this.http.put('http://localhost:3000/user/'+id , user);
-    }
-  //PRODUCT
-    getProductList():Observable<any> {
-      return this.http.get('http://localhost:3000/product');
-    }
-    
-    getSingleProduct(id:any):Observable<any> {
-      return this.http.get('http://localhost:3000/product/'+id);
-    }
-    
-    updateProduct(id:any, user:any):Observable<any> {
-      return this.http.put('http://localhost:3000/product/'+id , user);
-    }
-
-    addProduct(product:any):Observable<any>{
-      return this.http.post<any>('http://localhost:3000/product', product)
-    }
-
-    deletSingleProduct(id:any):Observable<any>{
-      return this.http.delete('http://localhost:3000/product/'+id);
-    }
-
+   
 }

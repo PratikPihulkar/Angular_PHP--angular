@@ -6,9 +6,9 @@
                 <form [formGroup]="loginForm" >
                     <div class="form-group col-md-12 ">
                     <label for="inputName4 ">ID:<span class="text-danger" >*</span></label>
-                    <input type="text" class="form-control" id="inputName4" formControlName="emailId" placeholder="Enter Id" [ngModel]="emailValue"  required>
+                    <input type="text" class="form-control" id="inputName4" formControlName="email" placeholder="Enter Id"  required>
                     
-                    <div *ngIf="loginForm.get('emailId')?.touched && loginForm.get('emailId')?.invalid" class="text-danger">
+                    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="text-danger">
                         ID is required.
                     </div>
                     </div>
@@ -17,7 +17,7 @@
                     
                     <div class="form-group col-md-12  mt-4">
                     <label for="password">Password: <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password"  title="Password" [ngModel]="passwordValue" required>
+                    <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password"  title="Password"  required>
                     <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger">
                         Password  required.
                     </div>
@@ -39,18 +39,18 @@
                     
                     <form [formGroup]="registerForm" >
                     <div class="coolinput col-md-12">
-                        <label for="fullName">Full Name: <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Full Name.." name="fullName" required>
-                        <div *ngIf="registerForm.get('fullName')?.touched && registerForm.get('fullName')?.invalid" class="text-danger">
+                        <label for="name">Full Name: <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" formControlName="name" placeholder="Enter Full Name.." name="name" required>
+                        <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid" class="text-danger">
                             Name is required.
                         </div>
                     </div>
 
                     
                     <div class="form-group col-md-12  mt-3">
-                        <label for="emailId ">Email:<span class="text-danger" >*</span></label>
-                        <input type="email" class="form-control" id="inputName4" formControlName="emailId" placeholder="i.e. user@gmail.com"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                        <div *ngIf="registerForm.get('emailId')?.touched && registerForm.get('emailId')?.invalid" class="text-danger">
+                        <label for="email ">Email:<span class="text-danger" >*</span></label>
+                        <input type="email" class="form-control" id="inputName4" formControlName="email" placeholder="i.e. user@gmail.com"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="text-danger">
                         Email is required.
                         </div>
                     </div>
@@ -93,10 +93,10 @@
                     
 
                     <div class="coolinput col mt-3">
-                        <label for="confirmPassword" class="text"> Confirm Password:</label>
-                        <input type="password" class="form-control input" formControlName="confirmPassword" placeholder=" " name="confirmPassword">
-                        <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid" class="text-danger">
-                            <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required</div>
+                        <label for="password_confirmation" class="text"> Confirm Password:</label>
+                        <input type="password" class="form-control input" formControlName="password_confirmation" placeholder=" " name="password_confirmation">
+                        <div *ngIf="registerForm.get('password_confirmation')?.touched && registerForm.get('password_confirmation')?.invalid" class="text-danger">
+                            <div *ngIf="registerForm.get('password_confirmation')?.errors?.['required']">Confirm Password is required</div>
                           </div>
                         <div *ngIf="registerForm.hasError('passwordMismatch')" class="text-danger">
                         Passwords do not match

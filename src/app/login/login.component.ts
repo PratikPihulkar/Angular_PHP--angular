@@ -25,95 +25,56 @@ export class LoginComponent  implements OnInit{
   ngOnInit(): void {
     
     this.loginForm = this.fb.group({
-      emailId: ['', Validators.required ,] ,//^[a-zA-Z]+(\s[a-zA-Z]+)?$    Validators.pattern('^[a-zA-Z]+$')
+      email: ['', Validators.required ,] ,//^[a-zA-Z]+(\s[a-zA-Z]+)?$    Validators.pattern('^[a-zA-Z]+$')
       password: ['', [Validators.required, Validators.maxLength(20)]]
     });
 
 
     this.registerForm = this.fb.group({
-      fullName: ['', [Validators.required] ] ,
-      emailId: ['', [Validators.required] ] ,//^[a-zA-Z]+(\s[a-zA-Z]+)?$    Validators.pattern('^[a-zA-Z]+$')
+      name: ['', [Validators.required] ] ,
+      email: ['', [Validators.required] ] ,//^[a-zA-Z]+(\s[a-zA-Z]+)?$    Validators.pattern('^[a-zA-Z]+$')
       mobile: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
-      orderList: [[]],
-      cartList: [[]],
+      password_confirmation: ['', [Validators.required]],
+      // orderList: [[]],
+      // cartList: [[]],
     },
     {
       validators: this.passwordMatchValidator
     });
     
-    this.dataStore.getUserList().subscribe((res)=>{
-      this.userList=res
-    })
+    
   }
 
   emailValue:any
   passwordValue:any
-  fullNameValue:any
+  nameValue:any
 
   goBack() {
     window.history.back();
   }
 
 tryLogin() {
-  try {
-    if (this.loginForm.value.emailId === 'admin' && this.loginForm.value.password === 'admin') {
-      this.router.navigate(['adminPage/']);
-    } else {
-      this.dataStore.getSingleUser(this.loginForm.value.emailId).subscribe(
+  
+   
+
+
+      this.dataStore.getSingleUser(this.loginForm.value.email).subscribe(
         (res) => {
           this.singleUser = res;
-          console.log(this.singleUser.password, "..........");
+          
+        })
+          
 
-          try {
-            if (this.singleUser.password === this.loginForm.value.password) {
-              console.log("Password Matched", this.singleUser);
-              alert("Welcome " + this.singleUser.fullName);
-              
-              this.dataStore.loginVar=true
-              this.dataStore.globleId=this.singleUser.id
-
-              this.dataStore.globleId = this.singleUser.id;
-              this.dataStore.loginVar = true;
-              this.router.navigate(['product/' + this.singleUser.id]);
-            } else {
-              throw new Error("ID or Password Mismatched");
-            }
-          } catch (error) {
-            if (error instanceof Error) {
-              alert(error.message);
-            } 
-            else 
-            {
-              alert("An unexpected error occurred.");
-            }
-
-          }
-        },
-        (error) => {
-          if (error instanceof Error) {
-            alert("Error fetching user data: " + error.message);
-          } else {
-            alert("An unexpected error occurred while fetching user data.");
-          }
-        }
-      );
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      alert("An unexpected error occurred: " + error.message);
-    } else {
-      alert("An unexpected error occurred.");
-    }
-  }
+       
+  
 }
 
 passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
   const password = control.get('password');
-  const confirmPassword = control.get('confirmPassword');
+  const password_confirmation = control.get('password_confirmation');
   
-  if (password && confirmPassword &&  password.value !== confirmPassword.value) {
+  if (password && password_confirmation &&  password.value !== password_confirmation.value) {
     console.log("Password MAtched")
     return { passwordMismatch: true };
     
@@ -124,12 +85,14 @@ passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
 op:any
 
 tryRegister(){
+  console.log(this.registerForm.value)
     this.dataStore.createUser(this.registerForm.value).subscribe((res)=>{
+    
       this.op=res
-      this.id=this.op.id
+      this.id=this.op.email
       alert(this.id+"  this is your ID Note down for Login ")
-      // this.router.navigate(['/login']);
-      window.location.reload();
+      this.router.navigate(['/login']);
+    
     })
 
 }
@@ -143,5 +106,14 @@ else{
 }
 }
 
+
+
+
+tvar:any
+
+getSingleUser(){
+  this.tvar= this.tvar=this.dataStore.getSingleUser({"email":"pratikpihulkar2000@gmail.com"})
+  console.log( this.tvar)
+}
 
 }
