@@ -1,0 +1,155 @@
+<div class="mdiv">
+    <div class="insideMdiv">
+        
+            <div class="topDiv">
+                <div class=" p-5">
+                <button class="btn btn-sm btn-outline-secondary "> <i class="bi bi-arrow-left"></i> Back</button>
+                </div>
+                <div class="">
+                </div>
+            </div>
+
+ <form action="">
+        <div class="bottomDiv row ">
+
+            <div class="leftDiv col">
+                <h3>Plan Name</h3>
+                
+                <br>
+                <div class="">
+                        <div class="option-box1" [class.selected]="selectedPlanOption === 'Monthly'" (click)="selectPlanOption('Monthly')">
+                            <span>Pay Monthly </span> &nbsp;&nbsp;<sub> $500/per Month</sub>
+                            
+                        </div>
+                        <br>
+                        <div class="option-box1" [class.selected]="selectedPlanOption === 'Annualy'" (click)="selectPlanOption('Annualy')">
+                             <span>Pay Annualy</span> &nbsp;&nbsp; <sub> $500/per Month</sub>
+                        </div>
+                </div>
+            <hr>
+                <div class="d-flex justify-content-between">
+                    <div class="">
+                        <h6>Total:</h6>
+                    </div>
+                    <div class="">
+                        <h6> $40000</h6>
+                    </div>
+                </div>
+
+    </div>
+
+            <div class="rightDiv col">
+                <h6></h6>
+                <h3>Upgrade to Plus</h3>
+                <p>Do more with unlimited blocks, files, automation and Integretion.</p>
+             
+                <label for="name">Name:</label>
+                <input type="text" class="form-control">
+                <br>
+                
+                <div class="form-group">
+                    <label>Select Payment Method:</label>
+                    <div class="">
+                        <div class="payment-options ">
+                            <div class="option-box  " [class.selected]="selectedOption === 'Card'" (click)="selectOption('Card')">
+                                <i class="bi bi-credit-card"></i>
+                                <span>Card</span>
+                            </div>
+                            <div class="option-box " [class.selected]="selectedOption === 'UPI'" (click)="selectOption('UPI')">
+                                <i class="bi bi-phone"></i>
+                                <span>UPI</span>
+                            </div>
+                            <div class="option-box " [class.selected]="selectedOption === 'Bank Transfer'" (click)="selectOption('Bank Transfer')">
+                                <i class="bi bi-bank"></i>
+                                <span>Bank Transfer</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <br>
+
+                    <div class="cardPayment" *ngIf="selectedOption=='Card'" >
+
+                            <div class="col">
+                                <label for="">Card No:</label>
+                                <input type="text"  class="form-control">
+                            </div>
+
+                            <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Expiry:</label>
+                                        <input type="text"  class="form-control">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="">CVV:</label>
+                                        <input type="text"  class="form-control">
+                                    </div>
+                                </div>
+                            <br>
+                               
+                           
+                    </div>
+
+                    <div class="upiPayment"  *ngIf="selectedOption=='UPI'" >
+                            <div class="row">
+                                <div class="col">
+                                    <label for="">UPI id:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="">Gmail:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <br>
+                    </div>
+
+                    <div class="bankTransfer" *ngIf="selectedOption=='Bank Transfer'">
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Bank Name:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                                <div class="col">
+                                    <label for="">Account no:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="">IFSC:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col">
+                                <label for="">Branch Name:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <br>
+                        
+                    </div>
+
+
+
+                    <div class="row g-3" > <!-- Add gap between columns -->
+                        <div class="col-12 col-md "> <!-- Full width on small screens, split on medium and above -->
+                            <button class="btn btn-danger btn-lg w-100 cancleBtn" cancleBtn>Cancel</button> <!-- Use btn-danger for cancel -->
+                        </div>
+                        <div class="col-12 col-md"> <!-- Full width on small screens, split on medium and above -->
+                            <button class="btn btn-success btn-lg w-100 submitBtn">Proceed Payment</button> <!-- Use btn-success for proceed -->
+                        </div>
+                    </div>
+
+            </div>
+
+         
+        </div>
+    </form>
+ </div>
+
+</div>
